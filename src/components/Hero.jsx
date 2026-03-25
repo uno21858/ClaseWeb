@@ -1,4 +1,5 @@
 import './Hero.css';
+import {Link} from "react-router";
 
 const Hero = () => {
     return (
@@ -12,8 +13,8 @@ const Hero = () => {
                 data.
             </p>
             <div className={'btn-container'}>
-                <button className="btn">View Projects</button>
-                <button className="btn">About Me</button>
+                <button className="btn"><Link to={'/Projects'}>View Projects</Link></button>
+                <button className="btn"><Link to={'/AboutMe'}>About Me</Link>  </button>
             </div>
         </div>
     );
