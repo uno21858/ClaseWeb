@@ -15,7 +15,7 @@ const Navbar = ({children}) => {
         <>
             <nav className="navbar">
                 <div className="navbar-logo">
-                    Full Stack
+                    Full Stack Dev
                 </div>
                 <div className="navbar-links">
                     {links.map(link => (

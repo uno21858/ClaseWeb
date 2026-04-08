@@ -1,21 +1,12 @@
 import './Hero.css';
-import {Link} from "react-router";
+import HeroText from './HeroText.jsx';
+import HeroProfile from './HeroProfile.jsx';
 
 const Hero = () => {
     return (
-        <div>
-            <p className="main-text">
-                Craftting Code as  <span className="Digital Art">Digital Artifacts</span>
-            </p>
-            <p>
-                Full-stack developer specializing in building high-performance, visually
-                stunning web experiences that live at the intersection of design and
-                data.
-            </p>
-            <div className={'btn-container'}>
-                <button className="btn"><Link to={'/Projects'}>View Projects</Link></button>
-                <button className="btn"><Link to={'/AboutMe'}>About Me</Link>  </button>
-            </div>
+        <div className="hero-container">
+            <HeroText />
+            <HeroProfile />
         </div>
     );
 };

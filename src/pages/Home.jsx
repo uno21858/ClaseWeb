@@ -1,16 +1,7 @@
-import {Link} from "react-router";
-
+import { Hero } from '../components';
 
 const Home = () => {
-    return (
-        <>
-            <h1>Home</h1>
-            <p>
-                <Link to={'/'}>Go Back</Link>
-            </p>
-        </>
-
-    )
+    return <Hero />;
 }
 
 export default Home;

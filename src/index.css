@@ -1,0 +1,87 @@
+:root {
+    --primary:                  #69daff;
+    --primary-dim:              #00c0ea;
+    --primary-fixed:            #00cffc;
+    --primary-fixed-dim:        #00c0ea;
+    --primary-container:        #00cffc;
+    --on-primary:               #004a5d;
+    --on-primary-fixed:         #002a35;
+    --on-primary-fixed-variant: #004a5c;
+    --on-primary-container:     #004050;
+    --inverse-primary:          #006880;
+
+    --secondary:                #67bafd;
+    --secondary-dim:            #58acef;
+    --secondary-fixed:          #acd6ff;
+    --secondary-fixed-dim:      #8ec9ff;
+    --secondary-container:      #006399;
+    --on-secondary:             #003655;
+    --on-secondary-container:   #f4f8ff;
+    --on-secondary-fixed:       #003758;
+    --on-secondary-fixed-variant: #005584;
+
+    --tertiary:                 #b3f3ff;
+    --tertiary-dim:             #88d8e7;
+    --tertiary-fixed:           #96e6f6;
+    --tertiary-fixed-dim:       #88d8e7;
+    --tertiary-container:       #96e6f6;
+    --on-tertiary:              #005e6a;
+    --on-tertiary-container:    #005560;
+    --on-tertiary-fixed:        #004049;
+    --on-tertiary-fixed-variant:#005f6b;
+
+    --surface:                  #040f1b;
+    --surface-dim:              #040f1b;
+    --surface-bright:           #1b2d41;
+    --surface-tint:             #69daff;
+    --surface-variant:          #152739;
+    --surface-container-lowest: #000000;
+    --surface-container-low:    #061422;
+    --surface-container:        #0b1b2a;
+    --surface-container-high:   #102131;
+    --surface-container-highest:#152739;
+    --inverse-surface:          #f8f9ff;
+    --inverse-on-surface:       #4a5665;
+
+    --background:               #040f1b;
+    --on-background:            #dde9fb;
+    --on-surface:               #dde9fb;
+    --on-surface-variant:       #a0acbd;
+
+    --outline:                  #6a7686;
+    --outline-variant:          #3d4957;
+
+    --error:                    #ff716c;
+    --error-dim:                #d7383b;
+    --error-container:          #9f0519;
+    --on-error:                 #490006;
+    --on-error-container:       #ffa8a3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--on-surface);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.blueprint-grid {
+    background-image:
+        linear-gradient(to right, rgba(105, 218, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(105, 218, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.data-tape {
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        #69daff, #69daff 4px,
+        transparent 4px, transparent 8px
+    );
+}
