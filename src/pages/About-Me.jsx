@@ -4,9 +4,9 @@ import {Link} from "react-router";
 const AboutMe = () => {
     return (
         <>
-        <h1>About me</h1>
+        <h1>Experience</h1>
             <p>
-                <Link to={'/'}>Return</Link>
+                <Link to={'/'}>Experience</Link>
             </p>
 
         </>

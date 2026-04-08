@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <div>
             <p className="main-text">
-                Architecting <span className="secondary-text">Digital Artifacts</span>
+                Craftting Code as  <span className="Digital Art">Digital Artifacts</span>
             </p>
             <p>
                 Full-stack developer specializing in building high-performance, visually

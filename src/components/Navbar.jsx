@@ -1,26 +1,40 @@
 import './Navbar.css'
-import {Link} from "react-router";
+import {Link, useLocation} from "react-router";
 
 const Navbar = ({children}) => {
+    const location = useLocation();
+
+    const links = [
+        {to: '/home', label: 'Bio'},
+        {to: '/Projects', label: 'Projects'},
+        {to: '/AboutMe', label: 'Experience'},
+        {to: '/Contact', label: 'Contact me'},
+    ];
+
     return (
         <>
-            <div className={'container-navbar'}>
-                <div className={'links'}>
-                    <p>
-                        <Link to={'/home'}>Home</Link>
-                    </p>
-                    <p>
-                        <Link to={'/AboutMe'}>About me</Link>
-                    </p>
-                    <p>
-                        <Link to={'/Projects'}>Projects</Link>
-                    </p>
-                    <p>
-                        <Link to={'/Contact'}>Contact</Link>
-                    </p>
+            <nav className="navbar">
+                <div className="navbar-logo">
+                    Full Stack
                 </div>
-            </div>
-            {children}
+                <div className="navbar-links">
+                    {links.map(link => (
+                        <Link
+                            key={link.to}
+                            to={link.to}
+                            className={`nav-link ${location.pathname === link.to ? 'active' : ''}`}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </div>
+                <div className="navbar-actions">
+                    <button className="nav-connect-btn">Connect</button>
+                </div>
+            </nav>
+            <main className="navbar-content">
+                {children}
+            </main>
         </>
     )
 }
