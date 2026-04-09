@@ -1,0 +1,223 @@
+.projects-page {
+    min-height: 100vh;
+    padding: 3rem 4rem 5rem;
+}
+
+.projects-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.projects-header {
+    margin-bottom: 3.5rem;
+}
+
+.projects-header-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.header-line {
+    display: block;
+    width: 3rem;
+    height: 2px;
+    background: var(--primary);
+}
+
+.header-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--primary);
+}
+
+.projects-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--on-surface);
+}
+
+.projects-title-accent {
+    color: var(--primary);
+}
+
+/* Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.projects-grid-small {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Cards */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--surface-container-low);
+    border-top: 2px solid var(--primary);
+    transition: background 0.3s;
+}
+
+.project-card:hover {
+    background: var(--surface-container);
+}
+
+.project-small {
+    border-top-color: var(--secondary);
+    flex: 1;
+}
+
+.project-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-id {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--outline);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.project-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    background: rgba(105, 218, 255, 0.08);
+    border: 1px solid rgba(105, 218, 255, 0.25);
+    padding: 0.25rem 0.6rem;
+}
+
+.project-badge-sm {
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--secondary);
+    opacity: 0.7;
+}
+
+.project-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.project-year {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--primary);
+}
+
+.project-small .project-year {
+    color: var(--secondary);
+}
+
+.project-name {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--on-surface);
+    line-height: 1;
+}
+
+.project-small .project-name {
+    font-size: 1.5rem;
+}
+
+.project-subtitle {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.project-desc {
+    font-size: 0.85rem;
+    color: var(--on-surface-variant);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-top: 0.5rem;
+}
+
+.project-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.project-tag {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary);
+    background: var(--surface-container-lowest);
+    border: 1px solid rgba(61, 73, 87, 0.4);
+    padding: 0.2rem 0.5rem;
+}
+
+.project-small .project-tag {
+    color: var(--on-surface-variant);
+}
+
+.project-link {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+.project-link:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .projects-page {
+        padding: 2rem 1.5rem 4rem;
+    }
+
+    .projects-title {
+        font-size: 2.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -7,7 +7,7 @@ const Navbar = ({children}) => {
     const links = [
         {to: '/home', label: 'Bio'},
         {to: '/Projects', label: 'Projects'},
-        {to: '/AboutMe', label: 'Experience'},
+        {to: '/experience', label: 'Experience'},
         {to: '/Contact', label: 'Contact me'},
     ];
 

@@ -7,12 +7,11 @@ const HeroText = () => {
                 Crafting Code as <span className="digital-art">Digital Artifacts</span>
             </p>
             <p className="hero-subtitle">
-                Full-stack developer specializing in building high-performance, visually
-                stunning web experiences that live at the intersection of design and data.
+                Computer Science student building real-world software — from automation tools to AWS deployments.
             </p>
             <div className="btn-container">
                 <button className="btn"><Link to={'/Projects'}>View Projects</Link></button>
-                <button className="btn"><Link to={'/AboutMe'}>About Me</Link></button>
+                <button className="btn"><Link to={'/experience'}>About Me</Link></button>
             </div>
         </div>
     );
