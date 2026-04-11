@@ -1,0 +1,400 @@
+.contact-page {
+    padding: 8rem 1.5rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* Hero Header */
+.contact-hero {
+    margin-bottom: 4rem;
+}
+
+.contact-hero-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-hero-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    display: inline-block;
+}
+
+.contact-hero-label {
+    color: var(--primary);
+    letter-spacing: 0.2em;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.contact-hero h1 {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--on-surface);
+    margin-bottom: 1rem;
+}
+
+.contact-hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.contact-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--surface-container-highest);
+    border: 1px solid rgba(105, 218, 255, 0.2);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--on-surface-variant);
+    text-transform: uppercase;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00FF41;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.badge-icon {
+    font-size: 14px;
+    color: var(--primary);
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.badge-port {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: rgba(105, 218, 255, 0.5);
+    text-transform: uppercase;
+}
+
+/* Main Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 7fr 5fr;
+    }
+}
+
+/* Form Panel */
+.form-panel {
+    background: rgba(11, 27, 42, 0.4);
+    backdrop-filter: blur(12px);
+    position: relative;
+    border-left: 1px solid rgba(105, 218, 255, 0.2);
+}
+
+.form-panel-tape {
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--primary), var(--primary) 4px,
+        transparent 4px, transparent 8px
+    );
+}
+
+.form-panel-inner {
+    padding: 2.5rem 3rem;
+}
+
+.form-panel-header {
+    margin-bottom: 2rem;
+}
+
+.form-panel-header h2 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.form-panel-header p {
+    font-size: 12px;
+    color: var(--on-surface-variant);
+    font-weight: 300;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+    .form-panel-inner { padding: 1.5rem; }
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.field-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.field-input,
+.field-textarea {
+    width: 100%;
+    background: var(--surface-container-lowest);
+    border: none;
+    border-bottom: 1px solid var(--outline-variant);
+    color: var(--on-surface);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    padding: 0.75rem 0;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.field-input::placeholder,
+.field-textarea::placeholder {
+    color: #2a3a4a;
+}
+
+.field-input:focus,
+.field-textarea:focus {
+    border-bottom-color: var(--primary);
+}
+
+.field-textarea {
+    resize: none;
+}
+
+/* Submit */
+.form-submit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    padding-top: 1rem;
+}
+
+.submit-btn {
+    position: relative;
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: var(--on-primary);
+    border: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover { background: var(--secondary); }
+.submit-btn:active { transform: scale(0.97); }
+.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.submit-btn-shine {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.2);
+    transform: translateX(-100%) skewX(12deg);
+    transition: transform 0.5s;
+    pointer-events: none;
+}
+
+.submit-btn:hover .submit-btn-shine {
+    transform: translateX(150%) skewX(12deg);
+}
+
+.form-status {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.form-status.success { color: #00FF41; }
+.form-status.error   { color: var(--error); }
+
+/* Sidebar */
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Details Card */
+.details-card {
+    background: rgba(16, 33, 49, 0.5);
+    padding: 2rem;
+    border-top: 2px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.details-card-bg-icon {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    opacity: 0.05;
+    font-size: 120px;
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.details-card h3 {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: var(--surface-container-lowest);
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.detail-item:hover {
+    background: var(--surface-variant);
+}
+
+.detail-item-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.detail-icon {
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.detail-sublabel {
+    font-size: 9px;
+    font-weight: 700;
+    color: #3a4a5a;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.detail-value {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--on-surface);
+}
+
+.detail-arrow {
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    font-size: 14px;
+    color: var(--primary);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.detail-item:hover .detail-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Visual Block */
+.visual-block {
+    background: var(--surface-container-lowest);
+    border: 1px solid rgba(61, 73, 87, 0.3);
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-block-center {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.visual-block-icon {
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    color: var(--primary);
+    font-size: 36px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.visual-block-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.visual-block-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(105,218,255,0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(105,218,255,0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
