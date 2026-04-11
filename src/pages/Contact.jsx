@@ -37,7 +37,7 @@ const Contact = () => {
 
     return (
         <div>
-            Contactme
+            Contact me
             <div>
                 <div style={{ display: 'flex', gap: '20px' }}>
                     <input

@@ -14,7 +14,7 @@ const handler = async (req, res) => {
             from: 'Acme <onboarding@resend.dev>',
             to: 'erick_sanar005@hotmail.com',
             subject: 'hello world',
-            html: `<strong>it works!</strong>
+            html: `<strong>Si jala</strong>
       <strong>${message}</strong>`,
         });
 

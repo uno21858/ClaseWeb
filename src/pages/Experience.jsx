@@ -39,7 +39,7 @@ const timeline = [
 
 const Experience = () => {
     return (
-        <div className="about-page blueprint-grid">
+        <div className="about-page">
             <div className="about-inner">
 
                 <header className="about-header">

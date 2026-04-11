@@ -38,7 +38,7 @@ const projects = [
 
 const Projects = () => {
     return (
-        <div className="projects-page blueprint-grid">
+        <div className="projects-page">
             <div className="projects-inner">
                 <header className="projects-header">
                     <div className="projects-header-label">
