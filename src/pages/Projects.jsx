@@ -14,17 +14,28 @@ const projects = [
     },
     {
         id: '02',
-        name: 'FDM',
-        subtitle: 'Invoice Automation Tool',
-        tags: ['Python', 'PySide6', 'Selenium'],
-        description: 'Desktop automation tool that streamlines invoice retrieval from Mexico\'s National Tax Authority (SAT). Reduced manual workload by 50% with real-time logging and error handling.',
-        badge: null,
-        year: 'AUG. 2022',
-        github: 'https://github.com/uno21858',
+        name: 'Traffic Sign CNN',
+        subtitle: 'Convolutional Neural Network for Traffic Signs',
+        tags: ['Python', 'Pytorch', 'Jupyter', 'CNN', 'ML'],
+        description: 'Convolutional Neural Network for traffic sign recognition and classification. Built as part of a scholarship research service program.',
+        badge: 'IN PROGRESS',
+        year: '2026',
+        github: 'https://github.com/uno21858/traffic-sign-cnn',
         featured: false,
     },
     {
         id: '03',
+        name: 'ClaseWeb',
+        subtitle: 'Personal Portfolio Website',
+        tags: ['React', 'Vite', 'Resend', 'Vercel', 'CSS'],
+        description: 'This portfolio. Built with React and vanilla CSS, serverless contact form with Resend, deployed on Vercel. No CSS frameworks.',
+        badge: null,
+        year: '2026',
+        github: 'https://github.com/uno21858/ClaseWeb',
+        featured: false,
+    },
+    {
+        id: '04',
         name: 'Hack2Dawn',
         subtitle: 'CTF Competition Infrastructure',
         tags: ['Docker', 'GitHub Actions', 'CTFd', 'OSINT'],
@@ -32,6 +43,28 @@ const projects = [
         badge: 'PAWNGUARD — ITESM',
         year: 'OCT. 2025',
         github: 'https://github.com/uno21858',
+        featured: false,
+    },
+    {
+        id: '05',
+        name: 'FlowCast',
+        subtitle: 'Streaming Service Modeling System',
+        tags: ['C++', 'OOP', 'CMake'],
+        description: 'Object-oriented streaming platform model with films and series classification, user satisfaction ratings, and data analysis report generation. Demonstrates inheritance, polymorphism, and operator overloading.',
+        badge: null,
+        year: 'JUN. 2025',
+        github: 'https://github.com/uno21858/FlowCast',
+        featured: false,
+    },
+    {
+        id: '06',
+        name: 'FDM',
+        subtitle: 'Invoice Automation Tool',
+        tags: ['Python', 'PySide6', 'Selenium'],
+        description: 'Desktop automation tool that streamlines invoice retrieval from Mexico\'s National Tax Authority (SAT). Reduced manual workload by 50% with real-time logging and error handling.',
+        badge: null,
+        year: 'AUG. 2022',
+        github: 'https://github.com/uno21858/FacturaDieselManager',
         featured: false,
     },
 ];
@@ -50,61 +83,68 @@ const Projects = () => {
                     </h1>
                 </header>
 
-                <div className="projects-grid">
-                    {/* Featured project - big */}
-                    <div className="project-card project-featured">
-                        <div className="project-card-top">
-                            <span className="project-id">{projects[0].id}</span>
-                            {projects[0].badge && (
-                                <span className="project-badge">{projects[0].badge}</span>
-                            )}
+                {/* Featured project - full width */}
+                <div className="project-card project-featured">
+                    <div className="project-featured-inner">
+                        <div className="project-featured-left">
+                            <div className="project-card-top">
+                                <span className="project-id">{projects[0].id}</span>
+                                {projects[0].badge && (
+                                    <span className="project-badge">{projects[0].badge}</span>
+                                )}
+                            </div>
+                            <div className="project-card-body">
+                                <span className="project-year">{projects[0].year}</span>
+                                <h2 className="project-name">{projects[0].name}</h2>
+                                <p className="project-subtitle">{projects[0].subtitle}</p>
+                            </div>
                         </div>
-                        <div className="project-card-body">
-                            <span className="project-year">{projects[0].year}</span>
-                            <h2 className="project-name">{projects[0].name}</h2>
-                            <p className="project-subtitle">{projects[0].subtitle}</p>
+                        <div className="project-featured-right">
                             <p className="project-desc">{projects[0].description}</p>
-                        </div>
-                        <div className="project-card-bottom">
-                            <div className="project-tags">
-                                {projects[0].tags.map(tag => (
-                                    <span key={tag} className="project-tag">{tag}</span>
-                                ))}
+                            <div className="project-card-bottom">
+                                <div className="project-tags">
+                                    {projects[0].tags.map(tag => (
+                                        <span key={tag} className="project-tag">{tag}</span>
+                                    ))}
+                                </div>
+                                <a href={projects[0].github} target="_blank" rel="noreferrer" className="project-link">
+                                    View Source →
+                                </a>
                             </div>
-                            <a href={projects[0].github} target="_blank" rel="noreferrer" className="project-link">
-                                View Source →
-                            </a>
                         </div>
                     </div>
+                </div>
 
-
-                    {/* Smaller cards */}
-                    <div className="projects-grid-small">
-                        {projects.slice(1).map(p => (
-                            <div key={p.id} className="project-card project-small">
-                                <div className="project-card-top">
-                                    <span className="project-id">{p.id}</span>
-                                    {p.badge && <span className="project-badge-sm">{p.badge}</span>}
-                                </div>
-                                <div className="project-card-body">
-                                    <span className="project-year">{p.year}</span>
-                                    <h2 className="project-name">{p.name}</h2>
-                                    <p className="project-subtitle">{p.subtitle}</p>
-                                    <p className="project-desc">{p.description}</p>
-                                </div>
-                                <div className="project-card-bottom">
-                                    <div className="project-tags">
-                                        {p.tags.map(tag => (
-                                            <span key={tag} className="project-tag">{tag}</span>
-                                        ))}
-                                    </div>
-                                    <a href={p.github} target="_blank" rel="noreferrer" className="project-link">
-                                        View Source →
-                                    </a>
-                                </div>
+                {/* Project grid */}
+                <div className="projects-grid">
+                    {projects.slice(1).map(p => (
+                        <div key={p.id} className="project-card project-small">
+                            <div className="project-card-top">
+                                <span className="project-id">{p.id}</span>
+                                {p.badge && (
+                                    <span className={p.badge === 'IN PROGRESS' ? 'project-badge-progress' : 'project-badge-sm'}>
+                                        {p.badge}
+                                    </span>
+                                )}
                             </div>
-                        ))}
-                    </div>
+                            <div className="project-card-body">
+                                <span className="project-year">{p.year}</span>
+                                <h2 className="project-name">{p.name}</h2>
+                                <p className="project-subtitle">{p.subtitle}</p>
+                                <p className="project-desc">{p.description}</p>
+                            </div>
+                            <div className="project-card-bottom">
+                                <div className="project-tags">
+                                    {p.tags.map(tag => (
+                                        <span key={tag} className="project-tag">{tag}</span>
+                                    ))}
+                                </div>
+                                <a href={p.github} target="_blank" rel="noreferrer" className="project-link">
+                                    View Source →
+                                </a>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
