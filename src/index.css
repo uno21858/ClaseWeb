@@ -56,6 +56,9 @@
     --error-container:          #9f0519;
     --on-error:                 #490006;
     --on-error-container:       #ffa8a3;
+
+    --accent-green:             #3fb950;
+    --accent-purple:            #d2a8ff;
 }
 
 * {

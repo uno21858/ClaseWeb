@@ -31,9 +31,9 @@
     line-height: 1;
 }
 
-.stat-value.blue  { color: var(--primary); }
-.stat-value.green { color: #3fb950; }
-.stat-value.purple { color: #d2a8ff; }
+.stat-value.blue   { color: var(--primary); }
+.stat-value.green  { color: var(--accent-green); }
+.stat-value.purple { color: var(--accent-purple); }
 
 .stat-desc {
     font-size: 0.7rem;
