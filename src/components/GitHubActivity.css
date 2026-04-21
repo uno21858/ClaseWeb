@@ -1,0 +1,82 @@
+/* src/components/GitHubActivity.css */
+.activity-section {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--outline-variant);
+}
+
+.activity-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--on-surface-variant);
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.activity-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+/* Heatmap — ocupa ~65% */
+.activity-heatmap {
+    flex: 2;
+    background: var(--surface-container-low);
+    border: 1px solid var(--outline-variant);
+    padding: 1.25rem;
+    overflow-x: auto;
+}
+
+.heatmap-title {
+    font-size: 0.75rem;
+    color: var(--on-surface-variant);
+    margin-bottom: 0.75rem;
+}
+
+.heatmap-title span {
+    color: var(--primary);
+}
+
+/* Currently Learning — ocupa ~35% */
+.activity-learning {
+    flex: 1;
+    background: var(--surface-container-low);
+    border: 1px solid var(--outline-variant);
+    padding: 1.25rem;
+}
+
+.learning-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--on-surface-variant);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.learning-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.learning-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--on-surface);
+}
+
+.learning-item::before {
+    content: '▸';
+    color: var(--primary);
+    font-size: 0.7rem;
+}
+
+@media (max-width: 768px) {
+    .activity-section { padding: 1.5rem; }
+    .activity-row { flex-direction: column; }
+    .activity-heatmap,
+    .activity-learning { flex: unset; width: 100%; }
+}
