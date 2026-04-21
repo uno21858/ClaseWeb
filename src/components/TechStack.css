@@ -1,0 +1,42 @@
+/* src/components/TechStack.css */
+.techstack-section {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--outline-variant);
+}
+
+.techstack-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--on-surface-variant);
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.techstack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--surface-container-low);
+    border: 1px solid var(--outline-variant);
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+    color: var(--on-surface);
+    font-weight: 500;
+}
+
+.tech-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .techstack-section { padding: 1.5rem; }
+}

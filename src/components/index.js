@@ -5,3 +5,4 @@ export { default as HeroText } from './HeroText.jsx';
 export { default as HeroProfile } from './HeroProfile.jsx';
 export { default as Layout } from './Layout.jsx';
 export { default as HomeStats } from './HomeStats.jsx';
+export { default as TechStack } from './TechStack.jsx';

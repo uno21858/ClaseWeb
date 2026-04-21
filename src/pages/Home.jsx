@@ -1,9 +1,10 @@
-import { Hero, HomeStats } from '../components';
+import { Hero, HomeStats, TechStack } from '../components';
 
 const Home = () => (
     <>
         <Hero />
         <HomeStats />
+        <TechStack />
     </>
 );
 
