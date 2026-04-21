@@ -1,7 +1,10 @@
-import { Hero } from '../components';
+import { Hero, HomeStats } from '../components';
 
-const Home = () => {
-    return <Hero />;
-}
+const Home = () => (
+    <>
+        <Hero />
+        <HomeStats />
+    </>
+);
 
 export default Home;

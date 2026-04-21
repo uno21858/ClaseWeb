@@ -1,0 +1,48 @@
+/* src/components/HomeStats.css */
+.stats-section {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--outline-variant);
+}
+
+.stats-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--on-surface-variant);
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 1rem;
+}
+
+.stat-card {
+    flex: 1;
+    background: var(--surface-container-low);
+    border: 1px solid var(--outline-variant);
+    padding: 1rem;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-value.blue  { color: var(--primary); }
+.stat-value.green { color: #3fb950; }
+.stat-value.purple { color: #d2a8ff; }
+
+.stat-desc {
+    font-size: 0.7rem;
+    color: var(--on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.4rem;
+}
+
+@media (max-width: 768px) {
+    .stats-section { padding: 1.5rem; }
+}
