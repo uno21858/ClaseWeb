@@ -38,11 +38,11 @@ const projects = [
         id: '04',
         name: 'Hack2Dawn',
         subtitle: 'CTF Competition Infrastructure',
-        tags: ['Docker', 'GitHub Actions', 'CTFd', 'OSINT'],
-        description: 'CI/CD pipeline using GitHub Actions and Docker to provision CTFd infrastructure for an internal jeopardy-style CTF competition. Developed OSINT challenge labs including GitHub forensics and Google dorking exercises.',
+        tags: ['Docker', 'GitHub Actions', 'CTFd', 'OSINT', 'Cybersecurity'],
+        description: 'Self-hosted CTFd platform for PawnGuard\'s internal jeopardy-style CTF, sponsored by MLH, 330ohms, and Google Cloud. CI/CD deployment with GitHub Actions and Docker. Includes 2 custom OSINT challenges (GitHub commit forensics, search-engine reconnaissance).',
         badge: 'PAWNGUARD — ITESM',
         year: 'OCT. 2025',
-        github: 'https://github.com/uno21858',
+        github: 'https://hack.pawnguard.org',
         featured: false,
     },
     {
@@ -65,6 +65,39 @@ const projects = [
         badge: null,
         year: 'AUG. 2022',
         github: 'https://github.com/uno21858/FacturaDieselManager',
+        featured: false,
+    },
+    {
+        id: '07',
+        name: 'GatePredict',
+        subtitle: 'Airline Catering System with AI Vision (HackMTY 2025)',
+        tags: ['Flutter', 'FastAPI', 'PostgreSQL', 'Gemini Vision', 'SQLite'],
+        description: 'Backend role in a 4-person team building an offline-first airline catering system. Flutter app syncs flight plans from PostgreSQL pre-flight, operates offline with SQLite during flight, and syncs consumption back on landing. Uses Gemini Vision API for product recognition from photos.',
+        badge: null,
+        year: 'OCT. 2025',
+        github: 'https://github.com/PlekDev/gateGroup',
+        featured: false,
+    },
+    {
+        id: '08',
+        name: 'KueskiWidget',
+        subtitle: 'Browser Extension — Tec Challenge with Kueski',
+        tags: ['TypeScript', 'React', 'WXT', 'Supabase', 'Tailwind'],
+        description: 'Browser extension built with WXT framework, React, and TypeScript. Academic challenge for Kueski at Tec de Monterrey. Team project with pnpm workspaces and a 3NF Supabase backend.',
+        badge: null,
+        year: 'MAR. 2026',
+        github: 'https://github.com/PlekDev/KueskiWidget',
+        featured: false,
+    },
+    {
+        id: '09',
+        name: 'Home Lab',
+        subtitle: 'Self-Hosted Infrastructure',
+        tags: ['Proxmox', 'Docker', 'RHEL', 'NVIDIA CUDA', 'Cloudflare'],
+        description: 'Proxmox VE hypervisor with dual RTX 3060 passthrough on RHEL 10. Runs Ollama with Open WebUI for local LLMs, self-hosted Gitea, and JupyterLab with GPU. Services exposed via Cloudflare Tunnels under uno21things.dev, with Zero Trust Access on Proxmox admin.',
+        badge: null,
+        year: '2026',
+        github: '',
         featured: false,
     },
 ];
@@ -107,9 +140,11 @@ const Projects = () => {
                                         <span key={tag} className="project-tag">{tag}</span>
                                     ))}
                                 </div>
-                                <a href={projects[0].github} target="_blank" rel="noreferrer" className="project-link">
-                                    View Source →
-                                </a>
+                                {projects[0].github && (
+                                    <a href={projects[0].github} target="_blank" rel="noreferrer" className="project-link">
+                                        View Source →
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -139,9 +174,11 @@ const Projects = () => {
                                         <span key={tag} className="project-tag">{tag}</span>
                                     ))}
                                 </div>
-                                <a href={p.github} target="_blank" rel="noreferrer" className="project-link">
-                                    View Source →
-                                </a>
+                                {p.github && (
+                                    <a href={p.github} target="_blank" rel="noreferrer" className="project-link">
+                                        View Source →
+                                    </a>
+                                )}
                             </div>
                         </div>
                     ))}
