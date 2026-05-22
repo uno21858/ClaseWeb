@@ -50,39 +50,6 @@
     padding-bottom: 0.25rem;
 }
 
-.navbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.nav-icon {
-    color: #94a3b8;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.nav-icon:hover {
-    color: #67bafd;
-}
-
-.nav-connect-btn {
-    background: #69daff;
-    color: #040f1b;
-    padding: 0.5rem 1.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.15s ease-in-out;
-}
-
-.nav-connect-btn:hover {
-    transform: scale(0.95);
-}
-
 .navbar-content {
     padding-top: 6rem;
     min-height: 100vh;

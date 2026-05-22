@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
@@ -48,7 +48,6 @@ const Contact = () => {
                         <span className="badge-icon">sensors</span>
                         <span>READY_TO_RECEIVE</span>
                     </div>
-                    <span className="badge-port">PORT_8080 // SECURE_CHANNEL</span>
                 </div>
             </section>
 
@@ -180,14 +179,16 @@ const Contact = () => {
                                 </div>
                                 <span className="detail-arrow">arrow_forward_ios</span>
                             </a>
-                        </div>
-                    </div>
-
-                    <div className="visual-block">
-                        <div className="visual-block-grid" />
-                        <div className="visual-block-center">
-                            <span className="visual-block-icon">schema</span>
-                            <p className="visual-block-label">CORE_MAPPING_V.01</p>
+                            <a className="detail-item" href="/Erick_Sanchez_Resume.pdf" target="_blank" rel="noreferrer">
+                                <div className="detail-item-left">
+                                    <span className="detail-icon">description</span>
+                                    <div>
+                                        <p className="detail-sublabel">RESUME_DOC</p>
+                                        <p className="detail-value">Erick_Sanchez_Resume.pdf</p>
+                                    </div>
+                                </div>
+                                <span className="detail-arrow">arrow_forward_ios</span>
+                            </a>
                         </div>
                     </div>
                 </div>

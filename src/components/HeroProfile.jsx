@@ -1,7 +1,4 @@
-// Imagen de pues nose un gato
-
 const HeroProfile = () => {
-
     return (
         <div className="hero-right">
             <div className="hero-image-wrapper">

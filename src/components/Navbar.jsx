@@ -28,9 +28,6 @@ const Navbar = ({children}) => {
                         </Link>
                     ))}
                 </div>
-                <div className="navbar-actions">
-                    <button className="nav-connect-btn">Connect</button>
-                </div>
             </nav>
             <main className="navbar-content">
                 {children}
