@@ -1,39 +1,36 @@
-import './Navbar.css'
-import {Link, useLocation} from "react-router";
+// src/components/Navbar.jsx
+import { useEffect, useState } from 'react';
+import { identity } from '../data.js';
 
-const Navbar = ({children}) => {
-    const location = useLocation();
+const LINKS = [
+  { to: '#about', label: 'About' },
+  { to: '#work', label: 'Work' },
+  { to: '#experience', label: 'Experience' },
+  { to: '#stack', label: 'Stack' },
+  { to: '#activity', label: 'Activity' },
+  { to: '#contact', label: 'Contact' },
+];
 
-    const links = [
-        {to: '/home', label: 'Bio'},
-        {to: '/Projects', label: 'Projects'},
-        {to: '/experience', label: 'Experience'},
-        {to: '/Contact', label: 'Contact me'},
-    ];
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-    return (
-        <>
-            <nav className="navbar">
-                <div className="navbar-logo">
-                    Full Stack Dev
-                </div>
-                <div className="navbar-links">
-                    {links.map(link => (
-                        <Link
-                            key={link.to}
-                            to={link.to}
-                            className={`nav-link ${location.pathname === link.to ? 'active' : ''}`}
-                        >
-                            {link.label}
-                        </Link>
-                    ))}
-                </div>
-            </nav>
-            <main className="navbar-content">
-                {children}
-            </main>
-        </>
-    )
+  return (
+    <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+      <a href="#top" className="nav__logo">
+        <span className="nav__logo-mark">ES</span>
+        <span className="nav__logo-text">{identity.name}</span>
+      </a>
+      <div className="nav__links">
+        {LINKS.map((l) => (
+          <a key={l.to} href={l.to} className="nav__link">{l.label}</a>
+        ))}
+      </div>
+      <a href={identity.resume} className="nav__cta" target="_blank" rel="noreferrer">Résumé</a>
+    </nav>
+  );
 }
-
-export default Navbar;

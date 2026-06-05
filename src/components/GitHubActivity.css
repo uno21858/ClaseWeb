@@ -1,82 +1,72 @@
-/* src/components/GitHubActivity.css */
-.activity-section {
-    padding: 2rem 4rem;
-    border-top: 1px solid var(--outline-variant);
+/* src/components/GitHubActivity.css — Aurora theme */
+.activity {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  align-items: stretch;
 }
 
-.activity-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--on-surface-variant);
-    letter-spacing: 0.08em;
-    margin-bottom: 1rem;
+.activity__heatmap,
+.activity__learning {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
 }
 
-.activity-row {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
+.activity__heatmap { overflow-x: auto; }
+
+.activity__cmd {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--faint);
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
 }
 
-/* Heatmap — ocupa ~65% */
-.activity-heatmap {
-    flex: 2;
-    background: var(--surface-container-low);
-    border: 1px solid var(--outline-variant);
-    padding: 1.25rem;
-    overflow-x: auto;
+.activity__title {
+  font-size: 0.82rem;
+  color: var(--dim);
+  margin-bottom: 16px;
 }
 
-.heatmap-title {
-    font-size: 0.75rem;
-    color: var(--on-surface-variant);
-    margin-bottom: 0.75rem;
+.activity__title span {
+  color: var(--accent);
+  font-family: var(--font-mono);
 }
 
-.heatmap-title span {
-    color: var(--primary);
+/* Tighten the react-github-calendar footer/legend to the theme */
+.activity__cal :is(text, .react-activity-calendar__legend-colors) { color: var(--dim); }
+
+.activity__learning-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--faint);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
 }
 
-/* Currently Learning — ocupa ~35% */
-.activity-learning {
-    flex: 1;
-    background: var(--surface-container-low);
-    border: 1px solid var(--outline-variant);
-    padding: 1.25rem;
+.activity__learning-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.learning-title {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--on-surface-variant);
-    letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
+.activity__learning-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--text);
 }
 
-.learning-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+.activity__learning-item::before {
+  content: '▸';
+  color: var(--accent);
+  font-size: 0.75rem;
 }
 
-.learning-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    color: var(--on-surface);
-}
-
-.learning-item::before {
-    content: '▸';
-    color: var(--primary);
-    font-size: 0.7rem;
-}
-
-@media (max-width: 768px) {
-    .activity-section { padding: 1.5rem; }
-    .activity-row { flex-direction: column; }
-    .activity-heatmap,
-    .activity-learning { flex: unset; width: 100%; }
+@media (max-width: 760px) {
+  .activity { grid-template-columns: 1fr; }
 }
