@@ -222,7 +222,7 @@ a { color: inherit; text-decoration: none; }
 .skill__title { font-family: var(--font-display); font-weight: 600; font-size: 20px; margin-top: 6px; letter-spacing: -.01em; }
 @media (max-width: 680px) { .stack__cards { grid-template-columns: 1fr; } }
 .marquee { margin-top: 24px; overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.marquee__track { display: flex; width: max-content; animation: scroll 42s linear infinite; }
+.marquee__track { display: flex; width: max-content; animation: scroll 46s linear infinite; }
 @keyframes scroll { to { transform: translateX(-50%); } }
 .marquee__item { font-family: var(--font-mono); font-size: 14px; color: var(--dim); white-space: nowrap; display: inline-flex; align-items: center; }
 .marquee__sep { color: var(--accent); margin: 0 20px; opacity: .6; }

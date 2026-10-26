@@ -28,7 +28,7 @@ export default function Projects() {
                 <div className="tags">
                   {featured.tags.map((t) => <span key={t} className="tag">{t}</span>)}
                 </div>
-                {featured.url && <span className="card__link">View source →</span>}
+                {featured.url && <span className="card__link">{featured.linkLabel || 'Source'} →</span>}
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function Projects() {
                 <div className="tags">
                   {p.tags.map((t) => <span key={t} className="tag">{t}</span>)}
                 </div>
-                {p.url && <span className="card__link">Source →</span>}
+                {p.url && <span className="card__link">{p.linkLabel || 'Source'} →</span>}
               </div>
             </a>
           </Reveal>

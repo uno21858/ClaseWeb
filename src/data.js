@@ -1,11 +1,12 @@
-// src/data.js — portfolio content for Erick Sánchez
+// src/data.js: portfolio content for Erick Sánchez (synced with Resume V7)
 export const identity = {
   name: 'Erick Sánchez',
-  role: 'Fullstack & Software Engineer',
+  role: 'Software Engineer',
+  focus: 'Backend · Embedded · ML',
   location: 'Guadalajara, Jalisco · MX',
   headline: ['Crafting code', 'as digital', 'artifacts.'],
   intro:
-    'Computer Science student at Tecnológico de Monterrey, shipping real software — from a LATAM expense-splitting app and invoice-automation tools to AWS deployments and a self-hosted GPU home lab.',
+    'Computer Science student and undergraduate research assistant at Tecnológico de Monterrey. I ship real software: an expense-splitting app live on the App Store and Google Play, ESP32/ESP8266 firmware and telemetry, PyTorch models trained on my own GPU server, and invoice automation for Mexico’s SAT.',
   email: 'contact@uno21things.dev',
   github: 'github.com/uno21858',
   githubUrl: 'https://github.com/uno21858',
@@ -22,56 +23,114 @@ export const stats = [
   { value: '9.0', label: 'GPA · CS @ ITESM' },
 ];
 
+// linkLabel is optional; defaults to "Source"
 export const projects = [
   {
     id: '01',
     name: 'Cuentas Claras LATAM',
     subtitle: 'Expense-Splitting Mobile App',
-    tags: ['Flutter', 'AWS Cognito', 'Lambda', 'Supabase', 'Firebase'],
+    tags: ['Flutter', 'Supabase', 'AWS Cognito', 'Lambda', 'RevenueCat'],
     description:
-      'Cross-platform (iOS & Android) expense-splitting app for users 13+ across LATAM — built solo in Flutter/Dart with DEV/PROD flavors and no bank-account integration. Multi-cloud serverless backend: AWS Cognito federated auth (Google/Apple) with a Pre-Token Generation Lambda injecting custom JWT claims, plus Supabase Edge Functions and Firebase. Hardened with row-level security, 80+ SECURITY DEFINER procedures with caller validation, pgcrypto encryption and rate-limited endpoints.',
+      'Built solo and shipped to the App Store and Google Play. AWS Cognito federated sign-in (Google, Apple) with a pre-token-generation Lambda that injects JWT claims for Supabase, RevenueCat subscriptions and FCM push through AWS Lambda. The client never queries tables directly: reads and writes go through ~170 SECURITY DEFINER RPCs that check the caller against the Cognito JWT, RLS covers all 21 tables (auto-enabled on new ones by an event trigger) and bank details are encrypted with pgcrypto using a key held in Supabase Vault. Ran authorized IDOR tests with reFlutter, Frida/objection and Burp Suite, and fixed an IDOR that let a regular user modify other users’ data.',
     badge: 'Solo Developer · Live',
-    year: '2025 — Now',
+    year: '2025 – Now',
     url: 'https://cuentasclaraslatam.com',
+    linkLabel: 'Visit site',
     featured: true,
   },
   {
     id: '02',
+    name: 'Home Water SCADA',
+    subtitle: 'Water Monitoring & Chlorination Controller',
+    tags: ['C++', 'ESP32-S3', 'LVGL', 'KiCad', 'PlatformIO'],
+    description:
+      'ESP32-S3 controller with a 7-inch touch HMI that reads a hall-effect flow sensor, two pressure transducers through a 16-bit I2C ADC (ADS1115) and a 4–20 mA level transmitter, and drives a MOSFET-switched 12 V mixing pump. Metered volume sets the chlorine dosing. HMI written in C++ with LVGL on a desktop simulator, then flashed with PlatformIO. Sensor node designed in KiCad (12 V input, 5 V regulation, 24 V boost, fused and zener-clamped input, flyback diode), built on perfboard and bench-validated channel by channel; 3D-printed case and sensor mounts.',
+    badge: 'Self-directed',
+    year: 'Sep 2026 – Now',
+    url: 'https://github.com/uno21858/home-water-scada',
+  },
+  {
+    id: '03',
+    name: 'Water Column Telemetry',
+    subtitle: 'Filtration Rig Telemetry · Undergraduate Research',
+    tags: ['C++', 'ESP8266', 'Supabase', 'Next.js', 'Vercel'],
+    description:
+      'Telemetry stack for a four-column water filtration rig at Tec de Monterrey: interrupt-driven ESP8266 firmware in C++ that counts flow-sensor pulses per column, a Supabase (PostgreSQL) schema for the readings and a Next.js dashboard on Vercel. ISRs live in IRAM, as the ESP8266 requires, and shared pulse counters are read inside critical sections to avoid race conditions.',
+    badge: 'Research · ITESM',
+    year: 'Aug 2026 – Now',
+    url: 'https://github.com/uno21858/water-column-telemetry',
+  },
+  {
+    id: '04',
+    name: 'Traffic Sign CNN',
+    subtitle: 'Computer Vision · Undergraduate Research',
+    tags: ['Python', 'PyTorch', 'CNN', 'Docker', 'FastAPI'],
+    description:
+      'Undergraduate research at Tec de Monterrey with Prof. Atoany Fierro Radilla: a custom ~628K-parameter CNN trained in PyTorch on GTSRB (43 classes), reaching 92% on the official test set. GPU training on a self-hosted RHEL server (Docker, NVIDIA Container Toolkit), with the model served through FastAPI.',
+    badge: '92% accuracy · GTSRB',
+    year: 'Feb – Jun 2026',
+    url: 'https://github.com/uno21858/traffic-sign-cnn',
+  },
+  {
+    id: '05',
+    name: 'Home Lab & LLM Fine-Tuning',
+    subtitle: 'Self-Hosted GPU Infrastructure',
+    tags: ['Proxmox', 'RHEL', 'CUDA', 'PEFT', 'Ollama'],
+    description:
+      'Proxmox VE hypervisor with dual RTX 3060 passthrough on RHEL 10, exposed through Cloudflare Tunnels with Zero Trust. On it I fine-tuned Qwen3-8B with QLoRA on 200K+ plain-text messages from my own WhatsApp and Instagram exports to model a conversational persona, merged the adapters with PEFT, quantized to GGUF and served it locally via Ollama.',
+    badge: 'Dual RTX 3060',
+    year: '2026',
+    url: '',
+  },
+  {
+    id: '06',
     name: 'Zenalyse',
     subtitle: 'IoT Environmental Monitoring System',
     tags: ['Raspberry Pi', 'AWS EC2', 'Next.js', 'PostgreSQL', 'Python'],
     description:
-      'Real-time IoT monitoring using a Raspberry Pi with DHT11, MQ-135, PIR and LDR sensors to track air quality, temperature, humidity, light and movement — polling every 5 seconds and correlating environmental data with user stress levels via an integrated survey. Backend on AWS EC2 with PostgreSQL and Next.js, exposed via Cloudflare Tunnel.',
-    badge: '1st place · Skilliket Symposium',
+      'IoT system on a Raspberry Pi with DHT11, MQ-135 and PIR sensors that correlates air quality, temperature, humidity and movement with user stress levels collected through an integrated survey. Python polling every 5 seconds, AWS EC2 backend with PostgreSQL and a Next.js dashboard.',
+    badge: '1st of 8 teams · Skilliket',
     year: 'Nov 2025',
     url: 'https://www.linkedin.com/posts/erick-alberto-sanchez_iot-internetofthings-raspberrypi-ugcPost-7404780671338180608-Ht0X',
+    linkLabel: 'Read post',
   },
   {
-    id: '03',
-    name: 'Traffic Sign CNN',
-    subtitle: 'Convolutional Neural Network',
-    tags: ['Python', 'PyTorch', 'Jupyter', 'CNN', 'ML'],
-    description:
-      'Undergraduate research at Tec de Monterrey: CNNs trained on the GTSRB dataset (43 classes), reaching 93% test accuracy with a ~628K-parameter baseline in 10 epochs. Trained on self-hosted GPU infrastructure (dual RTX 3060, RHEL) exposed via Cloudflare Tunnel.',
-    badge: '93% accuracy · GTSRB',
-    year: '2026',
-    url: 'https://github.com/uno21858/traffic-sign-cnn',
-  },
-  {
-    id: '04',
+    id: '07',
     name: 'Hack2Dawn',
     subtitle: 'CTF Competition Infrastructure',
     tags: ['Docker', 'GitHub Actions', 'CTFd', 'OSINT'],
     description:
-      'Self-hosted CTFd platform for PawnGuard’s internal jeopardy CTF — sponsored by MLH, 330ohms and Google Cloud. CI/CD with GitHub Actions + Docker, plus two custom OSINT challenges.',
+      'Internal jeopardy-style CTF for PawnGuard, sponsored by MLH, 330ohms and Google Cloud. CI/CD pipeline with GitHub Actions and Docker that provisions CTFd on a VPS, live server monitoring during the event, and two custom OSINT challenges: GitHub commit forensics and search-engine dorking for exposed documents.',
     badge: 'PawnGuard · ITESM',
     year: 'Oct 2025',
     url: 'https://hack.pawnguard.org',
+    linkLabel: 'Visit site',
   },
   {
-    id: '05',
+    id: '08',
+    name: 'FDM',
+    subtitle: 'Factura Diesel Manager · SAT Automation',
+    tags: ['Python', 'PySide6', 'Selenium', 'PyInstaller'],
+    description:
+      'Desktop app built on my own initiative that downloads diesel invoices from Mexico’s tax authority (SAT) and totals liters and cost, replacing a manual reconciliation workflow. Ships as a Windows installer (PyInstaller + NSIS). Its architecture became a bulk payroll-invoice downloader (PDF + XML) with batch scheduling and retry logic that pulled 5,000+ invoices for a full fiscal-year audit within SAT’s daily download limits.',
+    badge: '5,000+ invoices',
+    year: 'Aug 2022',
+    url: 'https://github.com/uno21858/FacturaDieselManager',
+  },
+  {
+    id: '09',
+    name: 'KueskiWidget',
+    subtitle: 'Browser Extension · Tec × Kueski',
+    tags: ['TypeScript', 'React', 'WXT', 'Supabase'],
+    description:
+      'Browser extension built with the WXT framework, React and TypeScript. Academic challenge for Kueski at Tec de Monterrey, with pnpm workspaces and a 3NF Supabase backend.',
+    year: 'Mar 2026',
+    url: 'https://github.com/PlekDev/KueskiWidget',
+  },
+  {
+    id: '10',
     name: 'GatePredict',
-    subtitle: 'Airline Catering w/ AI Vision — HackMTY',
+    subtitle: 'Airline Catering w/ AI Vision · HackMTY',
     tags: ['Flutter', 'FastAPI', 'PostgreSQL', 'Gemini Vision'],
     description:
       'Backend for an offline-first airline-catering system. Syncs flight plans pre-flight, runs offline on SQLite mid-flight, and reconciles on landing. Uses Gemini Vision for product recognition.',
@@ -80,96 +139,95 @@ export const projects = [
     url: 'https://github.com/PlekDev/gateGroup',
   },
   {
-    id: '06',
-    name: 'Home Lab',
-    subtitle: 'Self-Hosted GPU Infrastructure',
-    tags: ['Proxmox', 'RHEL', 'NVIDIA CUDA', 'Cloudflare'],
-    description:
-      'Proxmox VE hypervisor with dual RTX 3060 passthrough on RHEL 10. Runs local LLMs via Ollama + Open WebUI, self-hosted Gitea and GPU JupyterLab, exposed through Cloudflare Tunnels with Zero Trust.',
-    year: '2026',
-    url: '',
-  },
-  {
-    id: '07',
-    name: 'KueskiWidget',
-    subtitle: 'Browser Extension — Tec × Kueski',
-    tags: ['TypeScript', 'React', 'WXT', 'Supabase'],
-    description:
-      'Browser extension built with the WXT framework, React and TypeScript. Academic challenge for Kueski at Tec de Monterrey, with pnpm workspaces and a 3NF Supabase backend.',
-    year: 'Mar 2026',
-    url: 'https://github.com/PlekDev/KueskiWidget',
-  },
-  {
-    id: '08',
-    name: 'FDM',
-    subtitle: 'Invoice Automation Tool',
-    tags: ['Python', 'PySide6', 'Selenium'],
-    description:
-      'Desktop automation that streamlines invoice retrieval from Mexico’s tax authority (SAT) — cutting manual workload by 50% with real-time logging and error handling. Packaged as a Windows installer via PyInstaller + NSIS.',
-    year: 'Aug 2022',
-    url: 'https://github.com/uno21858/FacturaDieselManager',
-  },
-  {
-    id: '09',
+    id: '11',
     name: 'FlowCast',
     subtitle: 'Streaming Service Modeling System',
     tags: ['C++', 'OOP', 'CMake'],
     description:
-      'Object-oriented streaming-platform model with films/series classification, satisfaction ratings and report generation — demonstrating inheritance, polymorphism and operator overloading.',
+      'Object-oriented streaming-platform model with films/series classification, satisfaction ratings and report generation, demonstrating inheritance, polymorphism and operator overloading.',
     year: 'Jun 2025',
     url: 'https://github.com/uno21858/FlowCast',
   },
 ];
 
+// status: label shown on the left of each entry; current: highlights the node
 export const timeline = [
   {
     index: '01',
-    period: '2022 — Now',
-    role: 'Software Developer',
-    company: 'Transportes Sánchez Barcelata',
+    period: 'Aug 2026 – Now',
+    role: 'Undergraduate Research Assistant',
+    company: 'Water Filtration Telemetry · Tec de Monterrey',
     description:
-      'Built FDM, a Python automation tool (PySide6 + Selenium) to streamline invoice retrieval from Mexico’s SAT — reducing manual workload by 50%, with real-time logging and error handling for financial operations. Also built a batch tool to bulk-download a full fiscal-year of payroll invoices for a compliance audit.',
-    tags: ['Python', 'Selenium', 'PySide6'],
+      'Building the telemetry stack for a four-column water filtration rig: interrupt-driven ESP8266 firmware in C++ that counts flow-sensor pulses per column, a Supabase (PostgreSQL) schema for the readings and a Next.js dashboard on Vercel. ISRs kept in IRAM and shared counters read inside critical sections to avoid race conditions.',
+    tags: ['C++', 'ESP8266', 'Supabase', 'Next.js'],
+    status: 'Current',
     current: true,
   },
   {
     index: '02',
-    period: 'Oct 2025 — Now',
-    role: 'Infrastructure Staff',
-    company: 'PawnGuard — ITESM Guadalajara',
+    period: 'Feb – Jun 2026',
+    role: 'Undergraduate Research Assistant',
+    company: 'Computer Vision · Tec de Monterrey',
     description:
-      'Built a CI/CD pipeline with GitHub Actions and Docker to provision CTFd infrastructure for Hack2Dawn, an internal CTF. Authored OSINT challenge labs including GitHub forensics and search-engine reconnaissance.',
-    tags: ['Docker', 'GitHub Actions', 'CTFd'],
-    current: true,
+      'Trained a custom ~628K-parameter CNN in PyTorch on GTSRB traffic signs (43 classes), reaching 92% on the official test set. Set up GPU training on a self-hosted RHEL server (Docker, NVIDIA Container Toolkit) and served the model with FastAPI. Advisor: Prof. Atoany Fierro Radilla.',
+    tags: ['PyTorch', 'Docker', 'FastAPI'],
+    status: 'Completed',
+    current: false,
   },
   {
     index: '03',
-    period: '2024 — 2028',
-    role: 'B.S. Computer Science & Technology',
-    company: 'Tecnológico de Monterrey — ITESM',
+    period: 'Oct 2025 – Now',
+    role: 'Treasurer, previously Infrastructure Staff',
+    company: 'PawnGuard · Cybersecurity Student Group',
     description:
-      'Bachelor’s in Computer Science and Technology · GPA 9.0/10.0. AWS Certified Cloud Practitioner (Aug 2025).',
-    tags: ['AWS Certified', 'Cloud Practitioner'],
+      'Co-organized Hack2Dawn, an internal jeopardy-style CTF sponsored by MLH, 330ohms and Google Cloud. Engineered its CI/CD pipeline (GitHub Actions, Docker) that provisions CTFd on a VPS, monitored the server during the live event and wrote two OSINT challenges: GitHub commit forensics and search-engine dorking.',
+    tags: ['Docker', 'GitHub Actions', 'CTFd', 'OSINT'],
+    status: 'Current',
+    current: true,
+  },
+  {
+    index: '04',
+    period: 'Aug 2022 – Now',
+    role: 'Administrative Assistant (Part-time)',
+    company: 'Transportes Sánchez Barcelata',
+    description:
+      'Built FDM on my own initiative: a Python desktop app (PySide6, Selenium) that downloads diesel invoices from SAT and totals liters and cost, replacing a manual reconciliation workflow. Adapted its architecture into a bulk payroll-invoice downloader with batch scheduling and retry logic that pulled 5,000+ invoices (PDF + XML) for a full fiscal-year compliance audit within SAT’s daily download limits.',
+    tags: ['Python', 'PySide6', 'Selenium'],
+    status: 'Current',
+    current: true,
+  },
+  {
+    index: '05',
+    period: 'Aug 2024 – Jun 2028',
+    role: 'B.S. Computer Science & Technology',
+    company: 'Tecnológico de Monterrey · ITESM',
+    description:
+      'GPA 9.0/10.0. Coursework: Data Structures and Algorithms, Advanced Algorithms, Computer Architecture, Computer Networks, Cybersecurity.',
+    tags: ['AWS Cloud Practitioner', 'Oracle Java Foundations', 'Cambridge B2 First'],
+    status: 'Education',
     current: false,
   },
 ];
 
 export const skills = [
-  { group: 'Languages', items: ['Python', 'C++', 'Dart', 'TypeScript', 'JavaScript', 'SQL'] },
-  { group: 'ML & Data', items: ['PyTorch', 'NumPy', 'Pandas', 'scikit-learn'] },
-  { group: 'Frameworks & Backend', items: ['Flutter', 'Next.js', 'FastAPI', 'AWS', 'Firebase', 'Supabase', 'PostgreSQL'] },
-  { group: 'Infra & Security', items: ['Docker', 'GitHub Actions', 'Linux (RHEL)', 'Cloudflare', 'CTFd', 'Nmap'] },
+  { group: 'Languages', items: ['Python', 'C++', 'Dart', 'SQL (PL/pgSQL)', 'TypeScript', 'JavaScript', 'Java', 'CUDA', 'Bash'] },
+  { group: 'Embedded', items: ['ESP32 / ESP8266', 'PlatformIO', 'LVGL', 'KiCad', 'I2C', 'ADC & 4–20 mA', '3D printing'] },
+  { group: 'ML & Data', items: ['PyTorch', 'PEFT (QLoRA)', 'NumPy', 'Pandas', 'scikit-learn'] },
+  { group: 'Backend & Cloud', items: ['Supabase', 'PostgreSQL', 'AWS (Cognito, Lambda, EC2)', 'Firebase', 'FastAPI'] },
+  { group: 'Frameworks & Tools', items: ['Flutter', 'Next.js', 'PySide6', 'Selenium', 'Docker', 'Git', 'GitHub Actions', 'Linux (RHEL, Ubuntu)', 'Cloudflare'] },
+  { group: 'Security', items: ['Burp Suite', 'Frida', 'objection', 'reFlutter', 'Nmap', 'Wireshark'] },
 ];
 
 export const techs = [
-  'Python', 'JavaScript', 'TypeScript', 'C++', 'Dart', 'React', 'Next.js', 'Flutter',
-  'Tailwind', 'Node.js', 'FastAPI', 'PyTorch', 'NumPy', 'Pandas', 'PostgreSQL',
-  'SQLite', 'Supabase', 'Firebase', 'AWS', 'Docker', 'Proxmox', 'RHEL', 'Cloudflare', 'Figma',
+  'Python', 'C++', 'TypeScript', 'Dart', 'SQL', 'React', 'Next.js', 'Flutter',
+  'FastAPI', 'PyTorch', 'PEFT', 'Supabase', 'PostgreSQL', 'AWS', 'Firebase',
+  'ESP32', 'LVGL', 'KiCad', 'PlatformIO', 'Docker', 'GitHub Actions', 'Proxmox',
+  'RHEL', 'Ollama', 'Cloudflare', 'Burp Suite',
 ];
 
 export const learning = [
-  'TypeScript / TSX',
-  'Next.js',
-  'PyTorch',
-  'SQL — Normalization (NF)',
+  'CUDA / GPU programming',
+  'Embedded C++ · ESP32 & LVGL',
+  'PCB design · KiCad',
+  'LLM fine-tuning · QLoRA',
 ];

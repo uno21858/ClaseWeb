@@ -44,7 +44,7 @@ export default function Contact() {
           <SectionHead index="06" kicker="Contact" title="Let’s build" accent="something." />
           <p className="contact__lead">
             Open to internships, freelance work and collaborations. The fastest way to reach me
-            is email — I usually reply within a day.
+            is email. I usually reply within a day.
           </p>
           <div className="contact__links">
             <ContactLink k="Email" v={identity.email} href={`mailto:${identity.email}`} />
@@ -68,7 +68,7 @@ export default function Contact() {
             <textarea className="field__input field__textarea" name="message" value={form.message} onChange={ch} rows={5} placeholder="What are you working on?" required maxLength={2000} />
           </div>
           {status === 'success' && <span className="form-status success">Message sent ✓</span>}
-          {status === 'error' && <span className="form-status error">Something failed — try again</span>}
+          {status === 'error' && <span className="form-status error">Something failed, try again</span>}
           <button className="btn btn--primary btn--block" type="submit" disabled={status === 'loading'}>
             {status === 'loading' ? 'Sending…' : 'Send message'} <span className="btn__arrow">→</span>
           </button>
