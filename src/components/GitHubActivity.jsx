@@ -17,7 +17,7 @@ export default function GitHubActivity() {
         <Reveal className="activity__heatmap">
           <p className="activity__cmd">$ git contributions --year 2026</p>
           <p className="activity__title">
-            GitHub Activity — <span>@{identity.githubUser}</span>
+            GitHub Activity · <span>@{identity.githubUser}</span>
           </p>
           <div className="activity__cal">
             <GitHubCalendar

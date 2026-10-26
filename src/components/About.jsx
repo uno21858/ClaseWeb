@@ -22,16 +22,17 @@ export default function About() {
             messy real-world problems into software that runs in production.
           </p>
           <p className="about__muted">
-            My work spans automation tools that save real hours, cloud deployments on AWS,
-            CTF security infrastructure, and a GPU home lab running local LLMs. I care about
-            systems that are reliable, observable, and a little over-engineered in the right places.
+            My work spans a mobile app live on both stores, ESP32/ESP8266 firmware and telemetry
+            for research rigs, PyTorch models trained on my own GPU server, automation tools that
+            save real hours, and CTF infrastructure. I care about systems that are reliable,
+            observable, and a little over-engineered in the right places.
           </p>
         </Reveal>
         <Reveal className="about__facts" delay={80}>
           <Fact k="Based in" v={identity.location} />
-          <Fact k="Focus" v="Backend · Cloud · Automation" />
+          <Fact k="Focus" v={identity.focus} />
           <Fact k="Certified" v="AWS Cloud Practitioner" />
-          <Fact k="Currently" v="CS @ ITESM · 2024–2028" />
+          <Fact k="Currently" v="Research Assistant @ ITESM" />
         </Reveal>
       </div>
     </section>

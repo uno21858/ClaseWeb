@@ -34,7 +34,7 @@ export default function Hero() {
             <div className="idcard__rows">
               <div className="idcard__row"><span className="idcard__k">Role</span><span className="idcard__v">{identity.role}</span></div>
               <div className="idcard__row"><span className="idcard__k">Based</span><span className="idcard__v">{identity.location}</span></div>
-              <div className="idcard__row"><span className="idcard__k">Focus</span><span className="idcard__v">Backend · Cloud</span></div>
+              <div className="idcard__row"><span className="idcard__k">Focus</span><span className="idcard__v">{identity.focus}</span></div>
               <div className="idcard__row"><span className="idcard__k">Cert</span><span className="idcard__v">AWS Cloud Practitioner</span></div>
             </div>
           </div>

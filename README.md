@@ -1,8 +1,10 @@
 # ClaseWeb
 
-Personal portfolio — Erick Alberto Sanchez.
+Personal portfolio of Erick Alberto Sánchez.
 
-**Stack:** React 19, React Router 7, Vite 8, vanilla CSS, Resend (contact form), Vercel.
+**Stack:** React 19, Vite 8, vanilla CSS, react-github-calendar, Resend (contact form), Vercel.
+
+All content lives in `src/data.js`; keep it in sync with `public/Erick_Sanchez_Resume.pdf`.
 
 ## Dev
 

@@ -11,7 +11,7 @@ export default function Experience() {
           <Reveal key={item.index} delay={i * 60} className={`tl ${item.current ? 'tl--current' : ''}`}>
             <div className="tl__left">
               <span className="tl__period">{item.period}</span>
-              <span className="tl__status">{item.current ? 'Current' : 'Education'}</span>
+              <span className="tl__status">{item.status}</span>
             </div>
             <div className="tl__node"><span /></div>
             <div className="tl__right">
